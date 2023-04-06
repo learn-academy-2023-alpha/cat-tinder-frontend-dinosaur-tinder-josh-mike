@@ -1,7 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 
+<<<<<<< Updated upstream
 function App() {
+=======
+import dinosaurs from './mockDinosaurs'
+
+const App = () => {
+
+  const [mockDinosaurs, setMockDinosaurs] = useState(dinosaurs)
+
+  // console.log(mockDinosaurs)
+>>>>>>> Stashed changes
   return (
     <div className="App">
       <header className="App-header">
