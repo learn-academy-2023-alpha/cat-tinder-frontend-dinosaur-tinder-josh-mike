@@ -15,6 +15,7 @@ describe("<Header />", () => {
         const image = screen.getByRole("img")
         expect(image).toHaveAttribute("src", dinoHeaderLogo)
         expect(image).toHaveAttribute("alt", "Dinosaur Tinder logo with dinosaur and heart")
+        expect(image).toHaveClass("dino-logo")
     })
     it("renders app name", () => {
         render(
