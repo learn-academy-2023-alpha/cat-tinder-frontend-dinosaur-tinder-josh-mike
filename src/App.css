@@ -1,12 +1,14 @@
-.App {
-  text-align: center;
+h1{
+    font-family: cursive;
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+footer{
+    font-family: cursive;
+    text-align: center;
 }
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -42,3 +44,9 @@
     text-align: center;
 >>>>>>> Stashed changes
 }
+=======
+.not-found-container{
+    font-family: cursive;
+    text-align: center;
+}
+>>>>>>> c86eda4226f08aa6c703737e7889d263107e0212
