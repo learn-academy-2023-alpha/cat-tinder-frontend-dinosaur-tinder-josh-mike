@@ -1,14 +1,54 @@
-h1{
+/* styles for page text */
+*{
+  margin: 0;
+  padding: 0;
   font-family: cursive;
   text-align: center;
+}
+/* styles for footer */
+.footer{
+  font-size: 30px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #A85C4E;
+}
+/* styles for nav bar */
+.nav-bar{
+  background-color: #A85C4E;
+
+}
+/* styles for nav bar text */
+.nav-bar h1{
+  color: #27201A;
+}
+/* styles for nav bar drop down */
+.nav-drop-down{
+  font-size: 20px;
+}
+/* styles for home page */
+.home-page{
+  background-image: url(https://cdn.pixabay.com/photo/2021/10/29/20/36/dinosaurs-6752914_1280.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+}
+/* styles forcard containers */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 80px;
+}
+  /* styles for card body*/
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-footer{
-  font-family: cursive;
-  text-align: center;
-}
 
-.not-found-container{
-  font-family: cursive;
-  text-align: center;
-}
+
