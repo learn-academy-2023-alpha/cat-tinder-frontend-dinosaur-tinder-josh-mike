@@ -5,6 +5,7 @@ import {Card, CardBody, CardSubtitle, CardText, CardTitle} from 'reactstrap'
 const DinoasaurShow = ({ mockDinosaurs }) => {
   const { id } = useParams()
   let selectedDinosaur = mockDinosaurs.find(dinosaur => dinosaur.id === +id)
+  
   return (
     <>
       <div>DinoasaurShow</div>

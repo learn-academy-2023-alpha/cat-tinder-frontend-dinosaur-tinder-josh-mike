@@ -21,7 +21,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dinosaurindex" element={<DinosaurIndex mockDinosaurs={mockDinosaurs} />}/>
-          <Route path="/dinosaurshow/:id" element={<DinosaurShow mockDinosaurs={mockDinosaurs}/>}/>
+          <Route path="/dinosaurshow/:id" element={<DinosaurShow mockDinosaurs={mockDinosaurs} />}/>
           <Route path="/dinosaurnew" element={<DinosaurNew />}/>
           <Route path="/dinosauredit" element={<DinosaurEdit />}/>
           <Route path="*" element={<NotFound />}/>
