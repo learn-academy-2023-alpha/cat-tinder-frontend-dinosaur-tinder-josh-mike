@@ -6,14 +6,6 @@ import dinoHeaderLogo from '../assets/Tyrannosaur-in-love-by-Rones.png'
 
 describe("<Header />", () => {
 
-  // beforeEach(() => {
-  //   render(
-  //     <BrowserRouter>
-  //       <Header />
-  //     </BrowserRouter>
-  //   )
-  // })
-
   const headerRender = () => {
     render(
       <BrowserRouter>
@@ -42,7 +34,7 @@ describe("<Header />", () => {
 
     userEvent.click(screen.getByText("Home"))
     expect(screen.getByText("Home")).toBeInTheDocument()
-    userEvent.click(screen.getByText("Meet the Eligable Fossils"))
-    expect(screen.getByText("Meet the Eligable Fossils")).toBeInTheDocument()
+    userEvent.click(screen.getByText("Meet the Eligible Fossils"))
+    expect(screen.getByText("Meet the Eligible Fossils")).toBeInTheDocument()
   })
 })

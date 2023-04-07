@@ -9,20 +9,24 @@ import DinosaurNew from "./pages/DinosaurNew"
 import DinosaurEdit from "./pages/DinosaurEdit"
 import NotFound from "./pages/NotFound"
 import './App.css'
-import dinosaurs from './mockDinosaurs'
+import cDinosaurs from './mockDinosaurs'
 
 const App = () => {
 
-  const [mockDinosaurs, setMockDinosaurs] = useState(dinosaurs)
+  const [dinosaurs, setDinosaurs] = useState(cDinosaurs)
+
+  const createDinosaur = (cDinosaurs) => {
+    console.log("Created dinosaur:", cDinosaurs)
+  }
 
   return (
     <>
       <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/dinosaurindex" element={<DinosaurIndex mockDinosaurs={mockDinosaurs} />}/>
-          <Route path="/dinosaurshow/:id" element={<DinosaurShow mockDinosaurs={mockDinosaurs}/>}/>
-          <Route path="/dinosaurnew" element={<DinosaurNew />}/>
+          <Route path="/dinosaurindex" element={<DinosaurIndex dinosaurs={dinosaurs} />}/>
+          <Route path="/dinosaurshow/:id" element={<DinosaurShow dinosaurs={dinosaurs}/>}/>
+          <Route path="/dinosaurnew" element={<DinosaurNew createDinosaur={createDinosaur}/>}/>
           <Route path="/dinosauredit" element={<DinosaurEdit />}/>
           <Route path="*" element={<NotFound />}/>
         </Routes>

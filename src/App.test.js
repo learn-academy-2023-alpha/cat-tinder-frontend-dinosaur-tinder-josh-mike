@@ -21,10 +21,8 @@ describe("<App />", () => {
 
   it("renders a heading", () => {
     appRender()
-
-    const heading = screen.getByRole('heading', {
-      name: /home/i
-    })
+    
+    const heading = screen.getByText("Welcome To Dinosaur Tinder")
     expect(heading).toBeInTheDocument()
   })
 })
