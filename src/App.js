@@ -19,6 +19,10 @@ const App = () => {
     console.log("Created dinosaur:", newDino)
   }
 
+  const updateDinosaur = (dino, id) => {
+    console.log("dino:", dino)
+    console.log("id:", id)
+  }
   return (
     <>
       <Header />
@@ -27,7 +31,8 @@ const App = () => {
           <Route path="/dinosaurindex" element={<DinosaurIndex dinosaurs={dinosaurs} />}/>
           <Route path="/dinosaurshow/:id" element={<DinosaurShow dinosaurs={dinosaurs}/>}/>
           <Route path="/dinosaurnew" element={<DinosaurNew createDinosaur={createDinosaur}/>}/>
-          <Route path="/dinosauredit" element={<DinosaurEdit />}/>
+          <Route path="/dinosauredit/:id" element={<DinosaurEdit dinosaurs={dinosaurs} updateDinosaur={updateDinosaur}/>}/>
+
           <Route path="*" element={<NotFound />}/>
         </Routes>
       <Footer />
