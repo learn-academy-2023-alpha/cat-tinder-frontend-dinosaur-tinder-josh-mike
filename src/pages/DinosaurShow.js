@@ -2,9 +2,9 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import {Card, CardBody, CardSubtitle, CardText, CardTitle} from 'reactstrap'
 
-const DinoasaurShow = ({ mockDinosaurs }) => {
+const DinoasaurShow = ({ dinosaurs }) => {
   const { id } = useParams()
-  let selectedDinosaur = mockDinosaurs.find(dinosaur => dinosaur.id === +id)
+  let selectedDinosaur = dinosaurs.find(dinosaur => dinosaur.id === +id)
   return (
     <>
       <div>DinoasaurShow</div>

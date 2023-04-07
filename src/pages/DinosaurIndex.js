@@ -2,13 +2,13 @@ import React from 'react'
 import {Card, CardBody, CardSubtitle, CardText, CardTitle, Button} from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 
-const DinosaurIndex = ({ mockDinosaurs }) => {
+const DinosaurIndex = ({ dinosaurs }) => {
  
   return (
       <>
         <h1>DinosaurIndex</h1>
         <div className='cards'>
-          {mockDinosaurs.map((dinosaurs, index) => {
+          {dinosaurs.map((dinosaurs, index) => {
           return(
             <Card
               key={index}
@@ -36,9 +36,6 @@ const DinosaurIndex = ({ mockDinosaurs }) => {
                 >
                   {dinosaurs.diet}
                 </CardSubtitle>
-                <CardText>
-                  {dinosaurs.enjoys}
-                </CardText>
                 <Button>
                   <NavLink to={`/dinosaurshow/${dinosaurs.id}`}>Eligable Fossil</NavLink>
                 </Button>

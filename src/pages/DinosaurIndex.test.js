@@ -1,21 +1,21 @@
 import { render, screen } from '@testing-library/react'
 import DinosaurIndex from './DinosaurIndex'
 import { BrowserRouter } from 'react-router-dom'
-import mockDinosaurs from '../mockDinosaurs'
+import dinosaurs from '../mockDinosaurs'
 
 describe("<DinosaurIndex />", () => {
 
   const homeRender = () => {
     render(
       <BrowserRouter>
-        <DinosaurIndex mockDinosaurs={mockDinosaurs} />
+        <DinosaurIndex dinosaurs={dinosaurs} />
       </BrowserRouter>,
     )
   }
 
   it ("renders dinosaur cards", () => {
     homeRender()
-    mockDinosaurs.forEach(dino => {
+    dinosaurs.forEach(dino => {
       const dinoName = screen.getByText(dino.name)
       expect(dinoName).toBeInTheDocument()
     })
