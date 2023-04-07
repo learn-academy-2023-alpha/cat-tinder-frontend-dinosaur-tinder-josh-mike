@@ -41,7 +41,7 @@ const Header = (args) => {
                 <NavLink href="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/dinosaurindex/">Meet the Eligable Fossils</NavLink>
+                <NavLink href="/dinosaurindex/">Meet the Eligible Fossils</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/dinosaurnew">

@@ -32,6 +32,7 @@ const App = () => {
           <Route path="/dinosaurshow/:id" element={<DinosaurShow dinosaurs={dinosaurs}/>}/>
           <Route path="/dinosaurnew" element={<DinosaurNew createDinosaur={createDinosaur}/>}/>
           <Route path="/dinosauredit/:id" element={<DinosaurEdit dinosaurs={dinosaurs} updateDinosaur={updateDinosaur}/>}/>
+
           <Route path="*" element={<NotFound />}/>
         </Routes>
       <Footer />
