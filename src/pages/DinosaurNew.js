@@ -57,17 +57,18 @@ const DinosaurNew = ({ createDinosaur }) => {
           </Label>
           <Input
             id="diet"
-            name="select"
+            name="diet"
             placeholder="What do you REALLY like to eat?"
             type="select"
+            onChange={handleChange}
           >
-            <option>
+            <option value="Carnivore">
               Carnivore
             </option>
-            <option>
+            <option value="Herbivore">
               Herbivore
             </option>
-            <option>
+            <option value="Omnivore">
               Omnivore   
             </option>
           </Input>
@@ -90,7 +91,7 @@ const DinosaurNew = ({ createDinosaur }) => {
             Image URL
           </Label>
             <Input
-              name="dinosaurImage"
+              name="image"
               type="url"
               onChange={handleChange}
             />

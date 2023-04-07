@@ -15,8 +15,8 @@ const App = () => {
 
   const [dinosaurs, setDinosaurs] = useState(cDinosaurs)
 
-  const createDinosaur = (cDinosaurs) => {
-    console.log("Created dinosaur:", cDinosaurs)
+  const createDinosaur = (newDino) => {
+    console.log("Created dinosaur:", newDino)
   }
 
   return (
