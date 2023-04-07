@@ -5,6 +5,12 @@ import {Card, CardBody, CardSubtitle, CardText, CardTitle, Button, } from 'react
 const DinoasaurShow = ({ dinosaurs, deleteDinosaur }) => {
   const { id } = useParams()
   let selectedDinosaur = dinosaurs.find(dinosaur => dinosaur.id === +id)
+  
+  const handleSubmit = () => {
+    deleteDinosaur(deleteDinosaur, selectedDinosaur.id)
+    // navigate(`/dinosaurshow/${currentDinosaur.id}`)
+  }
+
   return (
     <>
       <div>DinoasaurShow</div>
@@ -44,7 +50,7 @@ const DinoasaurShow = ({ dinosaurs, deleteDinosaur }) => {
                     Change the Fossil Record
                   </NavLink>
               </Button>
-              <Button onClick={deleteDinosaur}>
+              <Button onClick={handleSubmit}>
                   <NavLink to={"/dinosaurindex/"}>
                     Delete the Fossil Record
                   </NavLink>
