@@ -23,16 +23,22 @@ const App = () => {
     console.log("dino:", dino)
     console.log("id:", id)
   }
+
+  const deleteDinosaur = (dino, id) => {
+    console.log("Deleted dinosaur:", dino)
+    console.log("id:", id)
+
+  }
+
   return (
     <>
       <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dinosaurindex" element={<DinosaurIndex dinosaurs={dinosaurs} />}/>
-          <Route path="/dinosaurshow/:id" element={<DinosaurShow dinosaurs={dinosaurs}/>}/>
+          <Route path="/dinosaurshow/:id" element={<DinosaurShow dinosaurs={dinosaurs} deleteDinosaur={deleteDinosaur}/>}/>
           <Route path="/dinosaurnew" element={<DinosaurNew createDinosaur={createDinosaur}/>}/>
           <Route path="/dinosauredit/:id" element={<DinosaurEdit dinosaurs={dinosaurs} updateDinosaur={updateDinosaur}/>}/>
-
           <Route path="*" element={<NotFound />}/>
         </Routes>
       <Footer />
