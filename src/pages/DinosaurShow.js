@@ -45,12 +45,12 @@ const DinoasaurShow = ({ dinosaurs, deleteDinosaur }) => {
               <CardText>
                 Enjoys: {selectedDinosaur.enjoys}
               </CardText>
-              <Button>
+              <Button color="primary" cssModule={{ btn: 'hyperspeed-btn' }}>
                   <NavLink to={`/dinosauredit/${selectedDinosaur.id}`}>
                     Change the Fossil Record
                   </NavLink>
               </Button>
-              <Button onClick={handleSubmit}>
+              <Button onClick={handleSubmit} color="primary" cssModule={{ btn: 'hyperspeed-btn' }}>
                   <NavLink to={"/dinosaurindex/"}>
                     Delete the Fossil Record
                   </NavLink>
