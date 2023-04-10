@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -13,21 +13,64 @@ import cDinosaurs from './mockDinosaurs'
 
 const App = () => {
 
-  const [dinosaurs, setDinosaurs] = useState(cDinosaurs)
+  const [dinosaurs, setDinosaurs] = useState([])
 
-  const createDinosaur = (newDino) => {
-    console.log("Created dinosaur:", newDino)
+  useEffect(() => {
+    readDinosaur()
+  }, [])
+
+  const readDinosaur = () => {
+    fetch("http://localhost:3000/dinosaurs")
+      .then((reponse) => reponse.json())
+      .then((payload) => {
+        setDinosaurs(payload)
+      })
+      .catch((error) => console.log(error))
   }
 
+  const createDinosaur = (newDino) => {
+    fetch("http://localhost:3000/dinosaurs", {
+      body: JSON.stringify(newDino),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+      .then((reponse) => reponse.json())
+      .then((payload) => {
+        readDinosaur()
+      })
+      .catch((error) => console.log("Dinosaur create errors:", error))
+  }
+
+
   const updateDinosaur = (dino, id) => {
-    console.log("dino:", dino)
-    console.log("id:", id)
+    fetch(`http://localhost:3000/dinosaurs/${id}`, {
+      body: JSON.stringify(dino),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+      .then((reponse) => reponse.json())
+      .then((payload) => {
+        readDinosaur()
+      })
+      .catch((error) => console.log("Dinosaur update errors:", error))
   }
 
   const deleteDinosaur = (dino, id) => {
-    console.log("Deleted dinosaur:", dino)
-    console.log("id:", id)
-
+    fetch(`http://localhost:3000/dinosaurs/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+      .then((reponse) => reponse.json())
+      .then((payload) => {
+        readDinosaur()
+      })
+      .catch((error) => console.log("Dinosaur delete errors:", error))
   }
 
   return (

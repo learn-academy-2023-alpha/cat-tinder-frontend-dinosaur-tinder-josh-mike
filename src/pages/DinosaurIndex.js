@@ -36,8 +36,8 @@ const DinosaurIndex = ({ dinosaurs }) => {
                 >
                   {dinosaurs.diet}
                 </CardSubtitle>
-                <Button>
-                  <NavLink to={`/dinosaurshow/${dinosaurs.id}`}>Eligable Fossil</NavLink>
+                <Button color="primary" cssModule={{ btn: 'hyperspeed-btn' }}>
+                  <NavLink to={`/dinosaurshow/${dinosaurs.id}`}>Eligible Fossil</NavLink>
                 </Button>
               </CardBody>
             </Card>
